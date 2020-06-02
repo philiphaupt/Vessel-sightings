@@ -9,3 +9,4 @@ boat_sightings <- readxl::read_xlsx("C:/Users/Phillip Haupt/OneDrive - Kent & Es
   filter(!is.na(Longitude)) %>% 
   filter(!is.na(Lat_min)) %>% 
   filter(!is.na(Long_min))
+
