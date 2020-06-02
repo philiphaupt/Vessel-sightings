@@ -53,18 +53,9 @@ boat_sightings$dd_lat <- dd_y
 boat_sightings$dd_lon <- dd_x
 
 # convert to sf object - start here
-st_as_sf(
-  x,
-  ...,
-  agr = NA_agr_,
-  coords,
-  wkt,
-  dim = "XYZ",
-  remove = TRUE,
-  na.fail = TRUE,
-  sf_column_name = NULL
-)
+sightings_sf <- st_as_sf(
+  x = boat_sightings,
+  coords = c("dd_lon", "dd_lat"),
+  crs = 4326
+  )
 
-
-
-sf::st_point(x = rbind(c(dd_x, dd_y))) %>% st_cast("MULTIPOINT")
