@@ -27,20 +27,20 @@ s_y_chr <- stringr::str_split_fixed(string = as.character(boat_sightings$Lat_min
 
 # repalce double zeros with 0 othewise this will cause an error becuase it considers the cell empty
 s_y <- sub("", "0", x=  s_y_chr) %>% 
-   as.numeric() * 0.6 
+   as.numeric() * 0.60 # (normally *60, but we have effectively ,multiplied by 10 already by removing the decimal part in front of the point".")
    
 s_x_chr <- stringr::str_split_fixed(string = as.character(boat_sightings$Long_min),
                                 pattern =  "[[:punct:]]",
                                 n = 2)[,2]
 # repalce double zeros with 0 othewise this will cause an error becuase it considers the cell empty
 s_x <- sub("", "0", x=  s_x_chr) %>% 
-  as.numeric() * 0.6 
+  as.numeric() * 0.60 
   
 
 # concatenate into a single character
-dms_y <- paste0(d_y, "°",m_y,"′",as.character(s_y), "″W")
+dms_y <- paste0(d_y, "°",m_y,"′",as.character(s_y), "″N")
 dms_y_2 <- char2dms(dms_y, chd = "°", chm = "′", chs = "″")
-dms_x <- paste0(d_x, "°",m_x,"′",as.character(s_x), "″N")
+dms_x <- paste0(d_x, "°",m_x,"′",as.character(s_x), "″E")
 dms_x_2 <- char2dms(dms_x, chd = "°", chm = "′", chs = "″")
 
 
