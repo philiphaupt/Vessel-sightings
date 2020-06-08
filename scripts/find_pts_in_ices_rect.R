@@ -1,7 +1,7 @@
 #intersect_with_ices_rectangles
 
-my_points <- sf::st_intersection(sightings_sf, my_ices_rect_sf)
-vessel_sightings_32f0_32f1 <- my_points
+overlap_points <- sf::st_intersection(sightings_sf, my_ices_rect_sf)
+vessel_sightings_32f0_32f1 <- overlap_points
 
 # remove geometry and save it as an excel file
 st_geometry(vessel_sightings_32f0_32f1) <- NULL

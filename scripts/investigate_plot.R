@@ -24,7 +24,7 @@ sightings_sf %>% sample_frac(size = 0.1) %>% #randomly select 10 % of points for
 
 # Plot only points inside
 # Plot sightings data
-my_points %>% 
+overlap_points %>% 
   tm_shape() +
   tmap::tm_symbols(size = 0.3)+
   my_ices_rect_sf %>% 
