@@ -52,7 +52,7 @@ dd_x <- as.numeric(dms_x_2)
 boat_sightings$dd_lat <- dd_y
 boat_sightings$dd_lon <- dd_x
 
-# convert to sf object - start here
+# convert to sf object
 sightings_sf <- st_as_sf(
   x = boat_sightings,
   coords = c("dd_lon", "dd_lat"),

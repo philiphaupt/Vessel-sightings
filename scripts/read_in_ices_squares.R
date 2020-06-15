@@ -1,5 +1,7 @@
 # read in ICES rectangles
 library(mapplots)
+library(sf)
+library(lwgeom)
 
 # enter names of ices rectangles as below
 ICES_rect_names <- c("32F0", "32F1")
