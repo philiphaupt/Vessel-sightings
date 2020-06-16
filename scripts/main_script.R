@@ -6,7 +6,7 @@ source("./scripts/read_xl_vessel_sightings.R")
 
 # Convert the coordinates DMds to dd and add to object boat_sightings
 source("./scripts/convert_coordinates.R")
-rm(list = setdiff(ls(), "boat_sightings")) # housekeeping: clean away unnecceasry objects
+#rm(list = setdiff(ls(), "boat_sightings")) # housekeeping: clean away unnecceasry objects
 
 # Generate in ICES sqaures
 source("./scripts/read_in_ices_squares.R")
