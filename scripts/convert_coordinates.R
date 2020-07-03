@@ -59,3 +59,5 @@ sightings_sf <- st_as_sf(
   crs = 4326
   )
 
+print("A lot of objects were created, but only boat_sightings and sightings_sf are required for further processing. At this stage, this script has to be run from within the script itself, and will not run properly from the source function.")
+
