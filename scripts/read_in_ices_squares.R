@@ -36,3 +36,6 @@ st_is_valid(my_ices_rect_sfc)
 # correct geometry for sf object
 correct <- st_make_valid(my_ices_rect_sfc)
 my_ices_rect_sf <- st_sf(correct)
+
+
+print("output object is: my_ices_rect_sf")
