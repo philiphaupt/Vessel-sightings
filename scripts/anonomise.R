@@ -2,22 +2,22 @@
 
 # aim remove personal data - anonomise
 
-anon_sightings_sf_data <- vessel_sightings_32f0_32f1_water %>% 
+anon_sightings_sf_data <- vessel_sightings_32f0_32f1_water_gears %>% 
         dplyr::select(Date = HDate,
                       Time,
                       Working,
-                      Gear = Activity...Gear.type,
+                      Main_Gear_Class = `Main Gear Class`,
                       geometry
                       )
-# write to geopackage file
-sf::write_sf(anon_sightings_data, "./anon_vessel_sightings_ices_32f0_32f1_2015_2020.gpkg", layer = "vessel_sightings_ices_32F0_32F1_20150101_20200601", driver = "GPKG")
+
+
 
 # Prepare data for tabular export, keep original Lat Longs and set geometry to NULL for csv format
-anon_sightings_tabular_data <- vessel_sightings_32f0_32f1_water %>% 
+anon_sightings_tabular_data <- vessel_sightings_32f0_32f1_water_gears %>% 
         dplyr::select(Date = HDate,
                       Time,
                       Working,
-                      Gear = Activity...Gear.type,
+                      Main_Gear_Class = `Main Gear Class`,
                       Lattitude,
                       Lat_min,
                       Longitude,
@@ -26,7 +26,5 @@ anon_sightings_tabular_data <- vessel_sightings_32f0_32f1_water %>%
 
 st_geometry(anon_sightings_tabular_data) <- NULL
 
-#write to csv
-write_excel_csv(anon_sightings_tabular_data, "./anon_vessel_sightings_32f0_32f1_2015_2020.csv")
-
+print("Data anonymised, two pbjects created, anon_sightings_sf_data (spatial for GIS output) anon_sightings_tabular_data (tabular only for csv output.")
 
