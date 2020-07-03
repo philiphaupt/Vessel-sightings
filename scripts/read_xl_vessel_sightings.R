@@ -10,3 +10,4 @@ boat_sightings <- readxl::read_xlsx("./data/Boat_sightings_20150101_to_20200601.
   filter(!is.na(Lat_min)) %>% 
   filter(!is.na(Long_min))
 
+print("The object created and used is: boat_sightings")
