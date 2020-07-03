@@ -2,8 +2,10 @@
 library("GADMTools")
 library("tmap")
 
+uk_l2 <- gadm_sf_loadCountries("GBR", level = 3, basefile = "./")
 uk_l2 <- gadm_sf_loadCountries("GBR", level = 2, basefile = "./")
 uk_l1 <- gadm_sf_loadCountries("GBR", level = 1, basefile = "./")
+
 
 # Keep only England
 england <- uk_l1$sf %>% filter(NAME_1 == "England")
